@@ -1,0 +1,309 @@
+WEEK_1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Column 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempora nobis quisquam aut delectus, facilis laboriosam placeat voluptas. Quam eveniet sed est omnis excepturi libero tempora natus fugiat iure illum.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo voluptates delectus iste, maiores nihil temporibus magnam sed nulla ratione impedit perspiciatis suscipit saepe voluptatibus aperiam quaerat? Expedita pariatur necessitatibus ullam?</p>
+
+        </div>
+        <div class="col-sm-4">
+            <h3>Column 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempora nobis quisquam aut delectus, facilis laboriosam placeat voluptas. Quam eveniet sed est omnis excepturi libero tempora natus fugiat iure illum.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo voluptates delectus iste, maiores nihil temporibus magnam sed nulla ratione impedit perspiciatis suscipit saepe voluptatibus aperiam quaerat? Expedita pariatur necessitatibus ullam?</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Column 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempora nobis quisquam aut delectus, facilis laboriosam placeat voluptas. Quam eveniet sed est omnis excepturi libero tempora natus fugiat iure illum.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo voluptates delectus iste, maiores nihil temporibus magnam sed nulla ratione impedit perspiciatis suscipit saepe voluptatibus aperiam quaerat? Expedita pariatur necessitatibus ullam?</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+==========================================================================================================================================WEEK_4
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Cars</title>
+    <link rel="stylesheet" href="./style.css">
+    <div class="container">
+
+        <div class="main-container">
+            <div class="road"></div>
+            <div class="road-sideview"></div>
+            <div class="moving-car">
+                <img src="bmw.png" alt="moving-car">
+            </div>
+
+            <div class="car-wheel">
+                <img src="wheel.png" alt="moving car wheel" 
+                    class="car-back-wheel">
+
+                <img src="wheel.png" alt="moving car wheel" 
+                    class="car-front-wheel">
+            </div>
+        </div>
+
+    </div>
+
+Style.css
+---------
+* {
+    margin: 0;
+    padding: 0;
+}
+.main-container {
+    height: 50vh;
+    width: 100%;
+    background-image: url(sky1.jfif);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+} 
+.road {
+    height: 200px;
+    width: 300%;
+    display: block;
+    background-image: url(road.jpg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: road 5s linear infinite;
+}
+@keyframes road {
+    100% {
+        transform: translateX(-3400px)  
+    }
+}
+.road-sideview {
+    height: 130px;
+    width: 500%;
+    background-image: url(city.png);
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: road-sideview 5s linear infinite;
+} 
+
+@keyframes road-sideview {
+    100% {
+        transform: translateX(-1400px);
+    }
+}
+.moving-car {
+    width: 500px;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+.moving-car img {
+    width: 90%;
+    animation: moving-car 1s linear infinite;
+}
+@keyframes moving-car {
+    100% {
+        transform: translateY(-1px);
+    }
+    50% {
+        transform: translateY(1px);
+    }
+    0% {
+        transform: translateY(-1px);
+    }
+}
+.car-wheel {
+    left: 50%;
+    bottom: 198px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+.car-wheel img {
+    width: 65px;
+    height: 65px;   
+    animation: car-wheel .5s linear infinite;
+}
+@keyframes car-wheel {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.car-back-wheel {
+    left: -170px;
+    position: absolute;
+}
+.car-front-wheel {
+    left: 80px;
+    position: absolute;
+}
+==========================================================================================================================================WEEK-6
+------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p> 
+      </div>
+      <nav class="navbar navbar-inverse">
+        <div class="container fliud">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Page 1-1</a></li>
+                        <li><a href="#">Page 1-2</a></li>
+                        <li><a href="#">Page 1-3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+       </div>
+    </nav>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+        <li class="item1 active"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        </ol>
+        <div class="carousel-inner" role="listitem">
+        <div class="item active">
+        <img src="download.jpg" alt="image1" width="100%" height="100%">
+       
+        </div>
+        <div class="item">
+        <img src="barbee.jpg" alt="image2" width="100%" height="100%">
+       
+        </div>
+        <div class="item">
+        <img src="jungle.jpg" alt="image3" width="100%" height="100%">
+        </div>
+        <div class="item">
+        <img src="ani.jpg" alt="image4" width="100%" height="100%">
+        </div>
+
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button">
+    <span class="glyphicon glyphicon-chevron-left" ariahidden="true"></span>
+    <span class="sr-only">Prev</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button">
+    <span class="glyphicon glyphicon-chevron-right" ariahidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
+    </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+    $("#myCarousel").carousel();
+    $(".item1").click(function(){
+    $("#myCarousel").carousel(0);
+    })
+    $(".item2").click(function(){
+    $("#myCarousel").carousel(1);
+    })
+    $(".item3").click(function(){
+    $("#myCarousel").carousel(2);
+    })
+    $(".left").click(function(){
+    $("#myCarousel").carousel("prev");
+    })
+    $(".right").click(function(){
+    $("#myCarousel").carousel("next");
+    })
+    });
+    </script>
+</body>
+</html>
+==========================================================================================================================================
+ WEEK-2
+=======
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebsiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+
+</nav>
+<div class="container">
+    <h3>Navbar with Dropdown</h3>
+    <p>This example add a dropdown menu for the "Page 1" button in the webpage</p>
+</div>
+    
+</body>
+</html>
